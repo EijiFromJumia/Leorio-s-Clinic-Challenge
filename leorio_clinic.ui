@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LeoroClinicApp</class>
+ <widget class="QMainWindow" name="LeoroClinicApp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>442</width>
+    <height>859</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Leorio's Clinic Manager</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="headerLabel">
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #2c3e50; color: white; padding: 15px;</string>
+      </property>
+      <property name="text">
+       <string>Leorio Medical Clinic</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="styleSheet">
+       <string notr="true">QTabBar::tab { height: 60px; font-size: 11pt; width: 140}</string>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="patientsTab">
+       <attribute name="title">
+        <string>Patients</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="patientFormLabel">
+          <property name="styleSheet">
+           <string notr="true">font-size: 14pt; font-weight: bold; padding: 5px;</string>
+          </property>
+          <property name="text">
+           <string>Patient Information</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="nameLabel">
+          <property name="styleSheet">
+           <string notr="true">font-size: 12pt; padding: 3px;</string>
+          </property>
+          <property name="text">
+           <string>Name:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="patientNameEdit">
+          <property name="font">
+           <font>
+            <pointsize>13</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 13pt; padding: 8px;</string>
+          </property>
+          <property name="placeholderText">
+           <string>Patient full name</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="ageLabel">
+          <property name="styleSheet">
+           <string notr="true">font-size: 12pt; padding: 3px;</string>
+          </property>
+          <property name="text">
+           <string>Age:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="patientAgeSpinBox">
+          <property name="styleSheet">
+           <string notr="true">font-size: 13pt; padding: 8px;</string>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>150</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="contactLabel">
+          <property name="styleSheet">
+           <string notr="true">font-size: 12pt; padding: 3px;</string>
+          </property>
+          <property name="text">
+           <string>Contact:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="patientContactEdit">
+          <property name="styleSheet">
+           <string notr="true">font-size: 13pt; padding: 8px;</string>
+          </property>
+          <property name="placeholderText">
+           <string>Phone or email</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="medicalHistoryLabel">
+          <property name="styleSheet">
+           <string notr="true">font-size: 12pt; padding: 3px;</string>
+          </property>
+          <property name="text">
+           <string>Medical History:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="patientMedicalHistoryEdit">
+          <property name="styleSheet">
+           <string notr="true">font-size: 12pt; padding: 8px;</string>
+          </property>
+          <property name="placeholderText">
+           <string>Previous conditions, allergies, etc.</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="patientListWidget">
+          <property name="styleSheet">
+           <string notr="true">font-size: 11pt; padding: 5px;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="addPatientBtn">
+            <property name="styleSheet">
+             <string notr="true">background-color: #27ae60; color: white; font-size: 14pt; font-weight: bold; border-radius: 5px;</string>
+            </property>
+            <property name="text">
+             <string>Add Patient</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="editPatientBtn">
+            <property name="styleSheet">
+             <string notr="true">background-color: #3498db; color: white; font-size: 14pt; font-weight: bold; border-radius: 5px;</string>
+            </property>
+            <property name="text">
+             <string>Edit</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="deletePatientBtn">
+            <property name="styleSheet">
+             <string notr="true">background-color: #e74c3c; color: white; font-size: 14pt; font-weight: bold; border-radius: 5px;</string>
+            </property>
+            <property name="text">
+             <string>Delete</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="appointmentsTab">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>650</height>
+        </size>
+       </property>
+       <attribute name="title">
+        <string>Appointments</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QCalendarWidget" name="calendarWidget"/>
+        </item>
+        <item>
+         <widget class="QListWidget" name="appointmentsList">
+          <property name="styleSheet">
+           <string notr="true">font-size: 11pt; padding: 5px;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="appointmentFormLabel">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 14pt; font-weight: bold; padding: 5px;</string>
+          </property>
+          <property name="text">
+           <string>Appointment Details</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="apptPatientIdLabel">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 11pt; padding: 2px;</string>
+          </property>
+          <property name="text">
+           <string>Patient ID:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="apptPatientIdEdit">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size:8pt; padding: 8px;</string>
+          </property>
+          <property name="placeholderText">
+           <string>Enter patient ID</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="apptDateLabel">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 11pt; padding: 2px;</string>
+          </property>
+          <property name="text">
+           <string>Date:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDateEdit" name="apptDateEdit">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 8ppt; padding: 8px;</string>
+          </property>
+          <property name="calendarPopup">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="apptTimeLabel">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 11pt; padding: 2px;</string>
+          </property>
+          <property name="text">
+           <string>Time:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTimeEdit" name="apptTimeEdit">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 8pt; padding: 8px;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="apptPurposeLabel">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 11pt; padding: 2px;</string>
+          </property>
+          <property name="text">
+           <string>Purpose:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="apptPurposeEdit">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>120</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 11pt; padding: 6px;</string>
+          </property>
+          <property name="placeholderText">
+           <string>Reason for appointment</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="apptCompletedCheckBox">
+          <property name="styleSheet">
+           <string notr="true">font-size: 12pt; padding: 5px;</string>
+          </property>
+          <property name="text">
+           <string>Completed</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="addAppointmentBtn">
+            <property name="styleSheet">
+             <string notr="true">background-color: #27ae60; color: white; font-size: 13pt; font-weight: bold; border-radius: 5px;</string>
+            </property>
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="updateAppointmentBtn">
+            <property name="styleSheet">
+             <string notr="true">background-color: #3498db; color: white; font-size: 13pt; font-weight: bold; border-radius: 5px;</string>
+            </property>
+            <property name="text">
+             <string>Update</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="deleteAppointmentBtn">
+            <property name="styleSheet">
+             <string notr="true">background-color: #e74c3c; color: white; font-size: 13pt; font-weight: bold; border-radius: 5px;</string>
+            </property>
+            <property name="text">
+             <string>Delete</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="treatmentsTab">
+       <attribute name="title">
+        <string>Treatments</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QLabel" name="treatmentHeaderLabel">
+          <property name="styleSheet">
+           <string notr="true">font-size: 16pt; font-weight: bold; padding: 8px;</string>
+          </property>
+          <property name="text">
+           <string>Treatment Record</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="treatmentPatientIdLabel">
+          <property name="styleSheet">
+           <string notr="true">font-size: 12pt; padding: 2px;</string>
+          </property>
+          <property name="text">
+           <string>Patient ID:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="treatmentPatientIdEdit">
+          <property name="styleSheet">
+           <string notr="true">font-size: 12pt; padding: 8px;</string>
+          </property>
+          <property name="placeholderText">
+           <string>Enter patient ID</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="treatmentApptIdLabel">
+          <property name="styleSheet">
+           <string notr="true">font-size: 12pt; padding: 2px;</string>
+          </property>
+          <property name="text">
+           <string>Appointment ID:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="treatmentApptIdEdit">
+          <property name="styleSheet">
+           <string notr="true">font-size: 12pt; padding: 8px;</string>
+          </property>
+          <property name="placeholderText">
+           <string>Enter appointment ID</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="treatmentNotesLabel">
+          <property name="styleSheet">
+           <string notr="true">font-size: 12pt; padding: 2px;</string>
+          </property>
+          <property name="text">
+           <string>Notes:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="treatmentNotesEdit">
+          <property name="styleSheet">
+           <string notr="true">font-size: 11pt; padding: 6px;</string>
+          </property>
+          <property name="placeholderText">
+           <string>Treatment notes and observations</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="treatmentMedicationsLabel">
+          <property name="styleSheet">
+           <string notr="true">font-size: 12pt; padding: 2px;</string>
+          </property>
+          <property name="text">
+           <string>Medications:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="treatmentMedicationsEdit">
+          <property name="styleSheet">
+           <string notr="true">font-size: 11pt; padding: 6px;</string>
+          </property>
+          <property name="placeholderText">
+           <string>Prescribed medications and dosages</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="treatmentListWidget">
+          <property name="styleSheet">
+           <string notr="true">font-size: 10pt; padding: 4px;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QPushButton" name="addTreatmentBtn">
+            <property name="styleSheet">
+             <string notr="true">background-color: #27ae60; color: white; font-size: 13pt; font-weight: bold; border-radius: 5px;</string>
+            </property>
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="updateTreatmentBtn">
+            <property name="styleSheet">
+             <string notr="true">background-color: #3498db; color: white; font-size: 13pt; font-weight: bold; border-radius: 5px;</string>
+            </property>
+            <property name="text">
+             <string>Update</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="deleteTreatmentBtn">
+            <property name="styleSheet">
+             <string notr="true">background-color: #e74c3c; color: white; font-size: 13pt; font-weight: bold; border-radius: 5px;</string>
+            </property>
+            <property name="text">
+             <string>Delete</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>442</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionExport_Data"/>
+    <addaction name="actionSettings"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionHelp_Guide"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionExport_Data">
+   <property name="text">
+    <string>Export Data</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionHelp_Guide">
+   <property name="text">
+    <string>Help Guide</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
