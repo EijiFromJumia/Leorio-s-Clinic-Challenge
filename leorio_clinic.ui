@@ -41,7 +41,7 @@
        <string notr="true">QTabBar::tab { height: 60px; font-size: 11pt; width: 140}</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="patientsTab">
        <attribute name="title">
@@ -171,7 +171,7 @@
              <string notr="true">background-color: #3498db; color: white; font-size: 14pt; font-weight: bold; border-radius: 5px;</string>
             </property>
             <property name="text">
-             <string>Edit</string>
+             <string>Edit Info</string>
             </property>
            </widget>
           </item>
